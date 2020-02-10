@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name                WME Wide-Angle Lens Places
+// @name                WME Wide-Angle Lens Places - City Merge Problems
 // @namespace           https://greasyfork.org/en/users/19861-vtpearce
 // @description         Find place that match filter criteria
 // @author              vtpearce and crazycaveman
@@ -480,7 +480,7 @@ var WMEWAL_Places;
                     (nameRegex == null || nameRegex.test(venue.attributes.name)) &&
                     (!settings.NoHouseNumber || address == null || address.attributes == null || address.attributes.houseNumber == null) &&
                     (!settings.AdLocked || venue.attributes.adLocked) &&
-                    (!settings.UndefStreet || typeof W.model.streets.objects[venue.attributes.streetID] === 'undefined' ) &&
+                    (!settings.UndefStreet || typeof W.model.streets.objects[venue.attributes.streetID] === 'undefined' ) && // voludu2
                     (!settings.UpdateRequests || venue.hasOpenUpdateRequests()) &&
                     (!settings.PendingApproval || !venue.isApproved()) &&
                     (!settings.NoStreet || address == null || address.attributes == null || address.attributes.street == null || address.attributes.street.isEmpty || address.attributes.street.name == null)) {
